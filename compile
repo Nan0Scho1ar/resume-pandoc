@@ -1,0 +1,6 @@
+#!/bin/sh
+# Compiles md and converts to pdf in a single step
+
+tools/compilemd "$1" "compiled/md/$1"
+out="$(echo "$1" | sed "s/\.md/.pdf/")"
+tools/mdtopdf "compiled/md/$1" "compiled/pdf/$out"

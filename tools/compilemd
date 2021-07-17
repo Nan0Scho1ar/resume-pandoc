@@ -1,0 +1,11 @@
+#!/bin/sh
+# Compile markdown file from snippets
+# Created: 18/07/2021
+# Author: Nan0Scho1ar (Christopher Mackinga)
+# License: GPL v3
+[ -z "$2" ] && out="compiled/md/$1" || out="$2"
+cat "$1" > "$out"
+for snip in $(sed -n "s/incsnip \(.*\)/\1/p" $1); do
+    regex=$(echo "incsnip $snip" | sed 's/\//\\\//g')
+    sed -i -e "/$regex/r $snip" -e "s/$regex//" "$out"
+done

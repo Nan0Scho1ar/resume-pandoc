@@ -1,0 +1,9 @@
+#!/bin/sh
+# Convert markdown file to pdf using pandoc and a template.
+# Created: 18/07/2021
+# Author: Nan0Scho1ar (Christopher Mackinga)
+# License: GPL v3
+
+[ -z "$2" ] && out="$(echo "$1" | sed "s/\.md/.pdf/")" || out="$2"
+pandoc "$1" -f markdown+yaml_metadata_block \
+  --template templates/resume.latex -o "$out"
