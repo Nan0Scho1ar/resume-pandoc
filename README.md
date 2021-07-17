@@ -79,7 +79,7 @@ sans serif bold you can just use the color `black`.
 
 # Example PDF
 
-See TODO
+See [example](https://github.com/Nan0Scho1ar/resume-pandoc/blob/master/compiled/pdf/example_cv.pdf)
 
 # Credits
 
